@@ -1,0 +1,54 @@
+
+package com.portfolio.BackEnd.modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Setter @Getter
+@Entity
+@Table(name = "Experiencias")
+public class Experiencia {
+    
+ @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @Column(name = "Cargo", length = 50)
+    private String cargoOcupado;
+
+    @Column(name = "Lugar", length = 50)
+    private String lugar;
+
+    @Column(name = "Fecha_Comienzo", length = 50)
+    private String comienzo;
+
+    @Column(name = "Fecha_finalizacion", length = 50)
+    private String finalizacion;
+
+    @Column(name = "Descripcion", length = 50)
+    private String descripcion;
+
+    public Experiencia() {
+    }
+
+    public Experiencia(int id, String cargoOcupado, String lugar, String comienzo, String finalizacion, String descripcion) {
+
+      
+        this.id = id;
+        this.cargoOcupado = cargoOcupado;
+        this.lugar = lugar;
+        this.comienzo = comienzo;
+        this.finalizacion = finalizacion;
+        this.descripcion = descripcion;
+    }   
+    
+    
+    
+}
