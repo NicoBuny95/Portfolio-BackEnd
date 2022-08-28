@@ -4,10 +4,13 @@
  */
 package com.portfolio.BackEnd.modelo;
 
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Getter;
@@ -34,8 +37,34 @@ public class Persona {
     
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String img;
+    
+     @Size(min = 1, max = 500, message = "no cumple con la longitud")
+    private String descripcion;
 
-       
+     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
+    private List<Educacion> educationList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
+    private List<Experiencia> experienceListList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idProy")
+    private List<Proyecto> projectList;   
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkill")
+    private List<Skill> skillsListList;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido, String img, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.img = img;
+        this.descripcion = descripcion;
+      
+    }
+    
     
 }
 
