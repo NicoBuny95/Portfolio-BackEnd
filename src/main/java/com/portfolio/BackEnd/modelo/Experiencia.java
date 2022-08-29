@@ -18,7 +18,7 @@ public class Experiencia {
     
  @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idExp;
+    private int id;
 
     @Column(name = "Cargo", length = 200,nullable = false)
     private String cargoOcupado;
@@ -41,11 +41,11 @@ public class Experiencia {
     public Experiencia() {
     }
 
-    public Experiencia(int idExp, String cargoOcupado, String lugar, String comienzo, String finalizacion
+    public Experiencia(int id, String cargoOcupado, String lugar, String comienzo, String finalizacion
             , String descripcion,String img_exp) {
 
       
-        this.idExp = idExp;
+        this.id = id;
         this.cargoOcupado = cargoOcupado;
         this.lugar = lugar;
         this.comienzo = comienzo;

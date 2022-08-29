@@ -16,7 +16,7 @@ import lombok.Setter;
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idEdu;
+    private int id;
 
     @Column(name = "Titulo", length = 150)
     private String titulo;
@@ -40,10 +40,10 @@ public class Educacion {
     public Educacion() {
     }
 
-    public Educacion(int idEdu, String titulo, String institucion, String ubicacion, String fechaIn, String fechaFin,String img_edu) {
+    public Educacion(int id, String titulo, String institucion, String ubicacion, String fechaIn, String fechaFin,String img_edu) {
 
       
-        this.idEdu = idEdu;
+        this.id = id;
         this.titulo = titulo;
         this.institucion = institucion;
         this.ubicacion = ubicacion;
