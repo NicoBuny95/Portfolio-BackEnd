@@ -44,8 +44,8 @@ public class EducacionControlador {
                  return "Se agrego con exito";
 	}
         
-    @GetMapping(path = {"/mostrar/{id}"})
-     public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
+    @GetMapping(path = {"/mostrar/{idEdu}"})
+     public ResponseEntity<Educacion> getById(@PathVariable("idEdu")int id){
         if(!EduServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.BAD_REQUEST);
         } else {
@@ -56,8 +56,8 @@ public class EducacionControlador {
     
     }
      @PreAuthorize("hasRole('ADMIN')")  
-     @PutMapping(path = {"/editar/{id}"})
-      public ResponseEntity<?> modificar(@PathVariable("id") int id, @RequestBody EducacionDTO dtoeducacion){
+     @PutMapping(path = {"/editar/{idEdu}"})
+      public ResponseEntity<?> modificar(@PathVariable("idEdu") int id, @RequestBody EducacionDTO dtoeducacion){
         if(!EduServ.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
