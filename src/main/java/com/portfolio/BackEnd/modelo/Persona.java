@@ -40,4 +40,34 @@ public class Persona {
     
      @Size(min = 1, max = 500, message = "no cumple con la longitud")
     private String descripcion;  
+     
+     
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
+    private List<Educacion> educationList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
+    private List<Experiencia> experienceListList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
+    private List<Proyecto> projectList;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkill")
+    private List<Skill> skillsListList;
+
+    public Persona() {
+    }
+
+    
+    
+    public Persona(String nombre, String apellido, String img, String descripcion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.img = img;
+        this.descripcion = descripcion;
+    }
+
+     
+    
+    
+    
 }
