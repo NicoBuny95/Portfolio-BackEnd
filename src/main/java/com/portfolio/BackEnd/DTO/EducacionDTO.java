@@ -21,11 +21,15 @@ public class EducacionDTO {
 
     @NotBlank
     private String fechaFin;
-
+    
+    @NotBlank
+    private String img_edu;
+    
+    
     public EducacionDTO() {
     }
 
-    public EducacionDTO(int id, String titulo, String institucion, String ubicacion, String fechaIn, String fechaFin) {
+    public EducacionDTO(int id, String titulo, String institucion, String ubicacion, String fechaIn, String fechaFin,String img_edu) {
 
       
         this.id = id;
@@ -34,6 +38,7 @@ public class EducacionDTO {
         this.ubicacion = ubicacion;
         this.fechaIn = fechaIn;
         this.fechaFin = fechaFin;
+        this.img_edu=img_edu;
     }
 
     /**
@@ -120,5 +125,16 @@ public class EducacionDTO {
         this.fechaFin = fechaFin;
     }
 
+    public String getImg_edu() {
+        return img_edu;
+    }
+
+    public void setImg_edu(String img_edu) {
+        this.img_edu = img_edu;
+    }
+
+    
+    
+    
 }
 

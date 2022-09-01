@@ -20,11 +20,14 @@ public class ExperienciaDTO {
 
     @NotBlank
     private String descripcion;
+    
+    @NotBlank
+    private String img_exp;
 
     public ExperienciaDTO() {
     }
 
-    public ExperienciaDTO(int id, String cargoOcupado, String lugar, String comienzo, String finalizacion, String descripcion) {
+    public ExperienciaDTO(int id, String cargoOcupado, String lugar, String comienzo, String finalizacion, String descripcion,String img_exp) {
 
       
         this.id = id;
@@ -33,6 +36,7 @@ public class ExperienciaDTO {
         this.comienzo = comienzo;
         this.finalizacion = finalizacion;
         this.descripcion = descripcion;
+        this.img_exp=img_exp;
     }
 
     /**
@@ -117,6 +121,14 @@ public class ExperienciaDTO {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImg_exp() {
+        return img_exp;
+    }
+
+    public void setImg_exp(String img_exp) {
+        this.img_exp = img_exp;
     }
     
     

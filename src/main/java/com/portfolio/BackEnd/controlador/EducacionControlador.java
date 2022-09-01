@@ -70,7 +70,7 @@ public class EducacionControlador {
         educacion.setUbicacion(dtoeducacion.getUbicacion());
         educacion.setFechaIn(dtoeducacion.getFechaIn());
         educacion.setFechaFin(dtoeducacion.getFechaFin());
-        
+        educacion.setImg_edu(dtoeducacion.getImg_edu());
         EduServ.edit(educacion);
         
         return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);

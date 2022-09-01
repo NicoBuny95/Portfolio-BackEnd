@@ -73,6 +73,7 @@ public class ExperienciaControlador {
         expe.setComienzo(dtoexperiencia.getComienzo());
         expe.setFinalizacion(dtoexperiencia.getFinalizacion());
         expe.setDescripcion(dtoexperiencia.getDescripcion());
+        expe.setImg_exp(dtoexperiencia.getImg_exp());
         
         ExpServ.edit(expe);
         
