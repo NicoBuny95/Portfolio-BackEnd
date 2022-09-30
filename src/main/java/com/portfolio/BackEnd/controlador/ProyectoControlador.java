@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RequestMapping("/Proyectos")
+//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "https://frontendportfolioproyecto.web.app")
 @RestController
 public class ProyectoControlador {
@@ -46,9 +47,9 @@ public class ProyectoControlador {
 	
         @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/Registrar")
-	public String agregarProyecto( @RequestBody Proyecto proy) {   
+	public ResponseEntity<?> agregarProyecto( @RequestBody Proyecto proy) {   
 		 ProyServ.registrarProyecto(proy);
-                 return "Se agrego con exito";
+                 return new ResponseEntity(new Mensaje("Se agrego con exito"), HttpStatus.OK);
 	}
     
         
@@ -77,6 +78,7 @@ public class ProyectoControlador {
         
         proy.setNombre(dtoProyecto.getNombre());
         proy.setDescripcion(dtoProyecto.getDescripcion());
+        proy.setImg_proy(dtoProyecto.getImg_proy());
         
         ProyServ.edit(proy);
         

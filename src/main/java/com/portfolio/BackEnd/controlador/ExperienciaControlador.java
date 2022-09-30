@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RequestMapping("/experiencias")
+//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "https://frontendportfolioproyecto.web.app")
 @RestController
 public class ExperienciaControlador {
@@ -39,9 +40,9 @@ public class ExperienciaControlador {
 	
         @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/Registrar")
-	public String agregarExperiencia( @RequestBody Experiencia Exp) {   
+	public ResponseEntity<?> agregarExperiencia( @RequestBody Experiencia Exp) {   
 		 ExpServ.registrarExperiencia(Exp);
-                 return "Se agrego con exito";
+                 return new ResponseEntity(new Mensaje("Se agrego con exito"), HttpStatus.OK);
 	}
     
         

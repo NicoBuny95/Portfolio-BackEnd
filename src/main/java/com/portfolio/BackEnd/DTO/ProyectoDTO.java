@@ -18,15 +18,18 @@ public class ProyectoDTO {
     private String nombre;
     @NotBlank
     private String descripcion;
+    
+    private String img_proy;  
 
     public ProyectoDTO() {
     }
 
-    public ProyectoDTO(int id, String nombre, String descripcion) {
+    public ProyectoDTO(int id, String nombre, String descripcion,String img_proy) {
 
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.img_proy=img_proy;
     }
 
     /**
@@ -69,6 +72,14 @@ public class ProyectoDTO {
      */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImg_proy() {
+        return img_proy;
+    }
+
+    public void setImg_proy(String img_proy) {
+        this.img_proy = img_proy;
     }
 
 }

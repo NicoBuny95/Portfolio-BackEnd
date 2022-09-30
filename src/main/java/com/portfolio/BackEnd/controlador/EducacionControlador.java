@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RequestMapping("/educacion")
+//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "https://frontendportfolioproyecto.web.app")
 @RestController
 public class EducacionControlador {
@@ -39,9 +40,9 @@ public class EducacionControlador {
 	
         @PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/Registrar")
-	public String agregarEstudio( @RequestBody Educacion Edu) {   
+	public ResponseEntity<?> agregarEstudio( @RequestBody Educacion Edu) {   
 		 EduServ.registrarEstudios(Edu);
-                 return "Se agrego con exito";
+                  return new ResponseEntity(new Mensaje("Se agrego con exito"), HttpStatus.OK);
 	}
         
     @GetMapping(path = {"/mostrar/{id}"})

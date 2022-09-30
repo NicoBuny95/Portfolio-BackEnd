@@ -20,8 +20,8 @@ public class Skill implements Serializable {
     public Skill() {
     }
 
-    public Skill(Long idSkill, String skillName, String picSkill, int percent) {
-        this.idSkill = idSkill;
+    public Skill( String skillName, String picSkill, int percent) {
+        
         this.skillName = skillName;
         this.picSkill = picSkill;
         this.percent = percent;

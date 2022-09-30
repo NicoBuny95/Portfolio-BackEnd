@@ -29,7 +29,7 @@ public class Proyecto {
     private Long id;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 50,message = "no cumple con la longitud")
     private String nombre;
     
 
@@ -37,17 +37,18 @@ public class Proyecto {
     private String descripcion;  
     
     
-    
+    private String img_proy;  
     
     public Proyecto() {
     }
 
-    public Proyecto( String nombre, String descripcion) {
+    public Proyecto( String nombre, String descripcion, String img_proy) {
 
 
 
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.img_proy=img_proy;
       
     }
 }

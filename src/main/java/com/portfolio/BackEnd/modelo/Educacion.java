@@ -18,22 +18,22 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "Titulo", length = 150)
+    @Column(name = "Titulo", length = 150,nullable = false)
     private String titulo;
 
-    @Column(name = "Institucion", length = 50)
+    @Column(name = "Institucion", length = 50,nullable = false)
     private String institucion;
 
-    @Column(name = "Ubicacion", length = 50)
+    @Column(name = "Ubicacion", length = 50,nullable = false)
     private String ubicacion;
 
-    @Column(name = "FechaIn", length = 50)
+    @Column(name = "FechaIn", length = 50,nullable = false)
     private String fechaIn;
 
-    @Column(name = "FechaFin", length = 50)
+    @Column(name = "FechaFin", length = 50,nullable = false)
     private String fechaFin;
 
-    @Column(name = "Imagen", length = 200)
+    @Column(name = "Imagen")
     private String img_edu;
 
     

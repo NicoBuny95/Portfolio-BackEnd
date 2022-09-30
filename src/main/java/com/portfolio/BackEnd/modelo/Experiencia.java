@@ -35,7 +35,7 @@ public class Experiencia {
     @Column(name = "Descripcion", length = 550,nullable = false)
     private String descripcion;
     
-    @Column(name = "Imagen", length = 250,nullable = false)
+    @Column(name = "Imagen" )
     private String img_exp;
 
     public Experiencia() {
