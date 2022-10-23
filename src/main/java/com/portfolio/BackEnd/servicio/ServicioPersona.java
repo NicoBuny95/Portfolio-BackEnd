@@ -7,6 +7,8 @@ package com.portfolio.BackEnd.servicio;
 import com.portfolio.BackEnd.modelo.Persona;
 import com.portfolio.BackEnd.repositorio.PersonaRepositorio;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,34 +17,40 @@ import org.springframework.stereotype.Service;
  * @author Nicolas Herrera
  */
 @Service
-public class ServicioPersona implements IPersonaServicio{
+@Transactional
+public class ServicioPersona {
     
     @Autowired PersonaRepositorio persoRepo;
 
-    @Override
-    public List<Persona> getPersona() {
-      List<Persona> persona = persoRepo.findAll();
-        return persona;  
+    public List<Persona> list(){
+        return persoRepo.findAll();
     }
-
-    @Override
-    public void savePersona(Persona persona) {
+    
+    public Optional<Persona> getOne(int id){
+        return persoRepo.findById(id);
+    }
+    
+    public Optional<Persona> getByNombre(String nombre){
+        return persoRepo.findByNombre(nombre);
+    }
+    
+    public void save(Persona persona){
         persoRepo.save(persona);
     }
-
-    @Override
-    public void deletePersona(Long id) {
+    
+    public void delete(int id){
         persoRepo.deleteById(id);
     }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = persoRepo.findById(id).orElse(null);
-        return persona;
+    
+    public boolean existsById(int id){
+        return persoRepo.existsById(id);
+    }
+    
+    public boolean existsByNombre(String nombre){
+        return persoRepo.existsByNombre(nombre);
     }
 
-    
-
+  
 }
 
     
